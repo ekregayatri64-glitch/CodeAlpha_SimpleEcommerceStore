@@ -1,13 +1,31 @@
-<script>
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Products</title>
+</head>
+<body>
 
-function buyNow(){
+<h1>My E-Commerce Store</h1>
 
-  alert("Order Placed Successfully 🎉");
+<p id="cart">Cart Items: 0</p>
+<p id="total">Total Price: ₹0</p>
 
-  localStorage.setItem("cartCount",0);
+<h3>Laptop</h3>
+<p>₹50000</p>
+<button onclick="addToCart(50000)">Add To Cart</button>
 
-  localStorage.setItem("cartTotal",0);
+<h3>Phone</h3>
+<p>₹20000</p>
+<button onclick="addToCart(20000)">Add To Cart</button>
 
-}
+<h3>Headphones</h3>
+<p>₹3000</p>
+<button onclick="addToCart(3000)">Add To Cart</button>
 
-</script>
+<br><br>
+<a href="cart.html">Go To Cart</a>
+
+<script src="script.js"></script>
+
+</body>
+</html>

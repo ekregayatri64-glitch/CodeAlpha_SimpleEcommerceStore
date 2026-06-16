@@ -2,51 +2,54 @@
 <html>
 
 <head>
-
-  <title>Cart</title>
-
-  <link rel="stylesheet" href="style.css">
-
+    <title>Cart</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-<div class="navbar">
+    <div class="navbar">
+        <h2>My Store</h2>
 
-  <h2>My Store</h2>
+        <div>
+            <a href="index.html">Home</a>
+            <a href="cart.html">Cart</a>
+            <a href="login.html">Login</a>
+            <a href="register.html">Register</a>
+        </div>
+    </div>
 
-  <div>
-    <a href="index.html">Home</a>
-    <a href="cart.html">Cart</a>
-    <a href="login.html">Login</a>
-    <a href="register.html">Register</a>
-  </div>
+    <h1>Your Cart</h1>
 
-</div>
+    <h2 id="cart">Cart Items: 0</h2>
 
-<h1>Your Cart</h1>
+    <h2 id="total">Total Price: ₹0</h2>
 
-<h2 id="cart">
-Cart Items: 0
-</h2>
+    <button onclick="buyNow()">Buy Now</button>
 
-<h2 id="total">
-Total Price: ₹0
-</h2>
+    <script>
 
-<script>
+        let cartCount = localStorage.getItem("cartCount") || 0;
+        let cartTotal = localStorage.getItem("cartTotal") || 0;
 
-let cartCount = localStorage.getItem("cartCount") || 0;
+        document.getElementById("cart").innerText =
+            "Cart Items: " + cartCount;
 
-let cartTotal = localStorage.getItem("cartTotal") || 0;
+        document.getElementById("total").innerText =
+            "Total Price: ₹" + cartTotal;
 
-document.getElementById("cart").innerText =
-"Cart Items: " + cartCount;
+        function buyNow() {
 
-document.getElementById("total").innerText =
-"Total Price: ₹" + cartTotal;
+            alert("Order Placed Successfully 🎉");
 
-</script>
+            localStorage.setItem("cartCount", 0);
+            localStorage.setItem("cartTotal", 0);
+
+            location.reload();
+        }
+
+    </script>
 
 </body>
+
 </html>
